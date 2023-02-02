@@ -21,7 +21,7 @@ then
   sudo apt update
   sudo apt install gh
   git config --global user.email "skyetseng@17.media"
-  git config --global user.name "github-actions-bot"
+  git config --global user.name "Skye-Tseng"
   git add $updated_file
   git commit -m "[Test] Hello file sync"
   git push -f --set-upstream origin $branch
