@@ -3,7 +3,7 @@ updated_file="hello.yaml"
 today=$(date +%F)
 
 
-echo "- hello" > $updated_file
+echo "- hello world" > $updated_file
 
 if [ -f "$updated_file" ];
 then
