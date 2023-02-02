@@ -26,8 +26,6 @@ then
   git commit -m "[Test] Hello file sync"
   git push -f --set-upstream origin $branch
 
-  pr_url=$(gh pr create --title "[Test] Hello file sync" --body $today)
-
   # 沒merge情形
   current_branch_pr_status=$(gh pr view --json 'state' -q '.state' | xargs) # 沒merge
   if [[ $current_branch_pr_status != 'OPEN' ]];
@@ -36,7 +34,6 @@ then
     pr_url=$(gh pr create --title "[Test] Hello file sync" --body $today)
   else
     echo "two"
-    pr_exists_msg="PR already exists, just go to merge ${branch} branch directly."
   fi
 else
   echo 'File unchanged.'
