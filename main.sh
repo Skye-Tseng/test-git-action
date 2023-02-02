@@ -7,8 +7,9 @@ echo "- hello world" > $updated_file
 
 if [ -f "$updated_file" ];
 then
-  yaml_path=folder/$updated_file
+  yaml_path=folder/test.yaml
   git checkout -b $branch
+  mv $updated_file $yaml_path
   sudo apt install -y yamllint
   yamllint -d relaxed --no-warnings $yaml_path
 else
