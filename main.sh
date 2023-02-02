@@ -7,7 +7,7 @@ echo "- hello world" > $updated_file
 
 if [ -f "$updated_file" ];
 then
-  yaml_path=$updated_file
+  yaml_path=folder/$updated_file
   git checkout -b $branch
   sudo apt install -y yamllint
   yamllint -d relaxed --no-warnings $yaml_path
@@ -22,7 +22,7 @@ then
   sudo apt install gh
   git config --global user.email "skyetseng@17.media"
   git config --global user.name "Skye-Tseng"
-  git add $updated_file
+  git add $yaml_path
   git commit -m "[Test] Hello file sync"
   git push -f --set-upstream origin $branch
 
